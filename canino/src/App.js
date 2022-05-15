@@ -1,11 +1,13 @@
 import './App.css';
+import Logo from './components/template/Logo';
+import Menu from './components/template/Menu';
 
-import './App.css';
 function App() {
-return (
-<div>
-<h1>Projeto Escola</h1>
-</div>
-);
+    return (
+        <div className="App">
+            <Logo/>
+            <Menu/>
+        </div>
+    );
 }
 export default App;
