@@ -1,32 +1,22 @@
 import './Menu.css';
+import Logo from './Logo'
 
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
 export default function Menu(props) {
 
   return (
-    <div class="topnav" id="myTopnav">
-      <div class="meio">
-      <a href="#home" class="active">Home</a>
-      <a href="#news">Adotar</a>
-      <a href="#contact">Doar</a>
-      <a href="#about">Postar</a>
-      <a href="#about">Sobre nós</a>
-      
-        <a href="#about" class="adireita">Entrar</a>
-        <a href="#about" class="adireita">Cadastrar-se</a>
-      
-      <a href="javascript:void(0);" class="icon" onClick={myFunction}>
-        <i class="fa fa-bars"></i>
-      </a>
+    <nav>
+      <div>
+        <Logo />
+
+        <div>
+          <a className="link" href="/adotar">Adotar</a>
+          <a className="link" href="/doar">Doar</a>
+          <a className="link" href="/postar">Postar</a>
+          <a className="link" href="/sobre">Sobre nós</a>
+          <a className="link" href="/entrar">Entrar</a>
+          <a className="link" href="/cadastrar">Cadastrar-se</a>
+        </div>
       </div>
-      
-    </div>
+    </nav>
   )
 }

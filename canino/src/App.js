@@ -1,11 +1,9 @@
-import './App.css';
-import Logo from './components/template/Logo';
+import './App.css'
 import Menu from './components/template/Menu';
 
 function App() {
     return (
-        <div className="App">
-            <Logo/>
+        <div className="app">
             <Menu/>
         </div>
     );
