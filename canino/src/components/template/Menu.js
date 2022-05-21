@@ -6,7 +6,9 @@ export default function Menu(props) {
   return (
     <nav>
       <div>
+        <div>
         <Logo />
+        </div>
 
         <div>
           <a className="link" href="/adotar">Adotar</a>
