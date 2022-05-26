@@ -18,6 +18,11 @@ nav div {
   justify-content: space-between;
 }
 
+nav div.logo {
+  height: auto;
+  width: auto;
+}
+
 .link {
   text-decoration: none;
 
@@ -46,17 +51,25 @@ nav div {
 }
 /* RESPONSIVIDADE DO MENU */
 @media screen and (max-width: 600px) {
-  
-  nav div{
-    display: block;
-    /* flex-direction: column; */
-
+  nav{
+    flex-direction: column;
+    height: auto;
+  }
+  nav > div{
+    flex-direction: column;
+    height: auto;
     width: 100%;
   }
-  nav div .link{
-    
-    width: 100%;
 
-    border-radius: 0px;
+  nav .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
-}
+
+  nav .links .link {
+    width: 100%;
+  }
+} 
