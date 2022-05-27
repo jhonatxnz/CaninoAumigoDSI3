@@ -1,0 +1,47 @@
+footer {
+    background-color: #ffffff;
+
+    bottom: 0;
+    position: fixed;
+
+    width: 100%;
+    height:auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer div{
+    width: 85%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer div div{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+footer a{
+    text-decoration: none;
+    color: #000000;
+}
+footer a:hover{
+    color: #00ffff;
+    transition: 0.2s ease-in-out;
+}
+/* RESPONSIVIDADE DO RODAPE */
+@media screen and (max-width: 600px) {
+    footer div{
+        flex-direction: column;
+        
+    }
+    footer div div{
+        text-align: center;
+        width: 100%;
+    }
+    footer{
+        height: 50vh;
+    }
+  } 

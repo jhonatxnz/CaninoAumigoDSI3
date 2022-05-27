@@ -72,9 +72,11 @@ nav div.logo {
     align-items: center;
     justify-content: center;
     width: 100%;
+    
   }
 
   nav .links .link {
     width: 100%;
+    border-radius: 0%;
   }
 } 
