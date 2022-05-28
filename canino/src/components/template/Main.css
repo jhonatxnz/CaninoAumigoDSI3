@@ -1,10 +1,49 @@
-div.content{
+div.content {
+    display: flex;
+    justify-content: center;
+    
     width: 80%;
     height: 80%;
-    margin:auto;
+    margin: auto;
+}
+
+main>div {
+    background-color: rgb(243, 244, 246);
+    padding: 30px;
+}
+.espaço{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+.botoes{
+    width: 49.5%;
+    height: 40px;
+
+    color: #fff;
+    background-color: #1E91F7;
+    
+    font-weight: bold;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+}
+@media screen and (max-width: 600px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        
     }
-    main > div {
-    background-color: #fff;
-    box-shadow: 0px 0px 15px #0004;
-    padding: 20px;
+    .espaço{
+        flex-direction: column;
     }
+    .botoes{
+        width: 100%;
+    }
+  } 

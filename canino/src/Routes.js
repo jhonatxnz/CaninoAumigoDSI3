@@ -15,8 +15,8 @@ export default function Rotas() {
         <Routes>
             <Route exact path='/'
                 element={
-                    <Main title="Bem Vindo!">
-                        <div>Canino Aumigo</div>
+                    <Main>
+                        
                     </Main>}
             />
             <Route path='/adotar' element={<Adotar />} />
