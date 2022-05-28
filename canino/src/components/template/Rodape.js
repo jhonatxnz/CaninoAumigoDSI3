@@ -29,7 +29,7 @@ export default function Rodape(props) {
                 </div>
 
                 <div>
-                    <h2>Sobre nós</h2>
+                    <h2><a href="/sobre">Sobre nós</a> </h2>
                 </div>
             </div>
             
