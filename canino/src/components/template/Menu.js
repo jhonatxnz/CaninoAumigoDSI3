@@ -6,9 +6,10 @@ export default function Menu(props) {
   return (
     <nav>
       <div>
-        <div className="logo"><Logo /></div>
-
-
+        <div className="logo">
+          <Logo />
+        </div>
+        
         <div className="links">
           <a className="link" href="/adotar">Adotar</a>
           <a className="link" href="/doar">Doar</a>

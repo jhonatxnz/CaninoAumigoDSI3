@@ -2,14 +2,12 @@ div.content {
     display: flex;
     justify-content: center;
     
-    width: 80%;
-    height: 80%;
+    width: 100%;
     margin: auto;
 }
 
 main>div {
     background-color: rgb(243, 244, 246);
-    padding: 30px;
 }
 .espaço{
     display: flex;
@@ -34,6 +32,11 @@ main>div {
 
     border-radius: 5px;
 }
+.botoes:hover{
+    background-color: #90c4f1;
+    transition: 0.25s ease-in-out;
+}
+
 @media screen and (max-width: 600px) {
     main{
         display: flex;

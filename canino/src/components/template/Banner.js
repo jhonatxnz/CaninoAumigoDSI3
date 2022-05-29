@@ -1,4 +1,4 @@
-import banner from '../assets/imagens/banner_site.png';
+import banner from '../../assets/imagens/banner_site.png';
 import './Banner.css';
 export default function Banner(props) {
     return (

@@ -45,12 +45,12 @@ nav div.logo {
 }
 
 .link:hover {
-  background-color: #ece4e9;
+  background-color: #d5e8f8;
 
   transition: 0.25s ease-in-out;
 }
 .link:active{
-  background-color: aqua;
+  background-color: #00ffff;
   transition: 0.5s ease-in-out;
   
 }
