@@ -1,5 +1,5 @@
 footer {
-    background-color: #ffffff;
+    background-color: #1E91F7;
 
     bottom: 0;
 
@@ -22,12 +22,15 @@ footer div div{
     align-items: center;
     justify-content: center;
 }
+footer h2{
+    color: #ffffff;
+}
 footer a{
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
 }
 footer a:hover{
-    color: #00ffff;
+    color: #000000;
     transition: 0.2s ease-in-out;
 }
 /* RESPONSIVIDADE DO RODAPE */

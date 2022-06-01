@@ -1,0 +1,31 @@
+div.content {
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+    margin: auto;
+}
+.mainSobre{
+   width: 50%;
+   height: auto;
+   border-radius: 10px;
+
+   padding: 50px;
+   margin: 20px 0px 20px 0px;
+   background-color: rgb(255, 255, 255); 
+}
+.mainSobre h1{
+    color: #1E91F7;
+    padding-bottom: 40px;
+}
+.mainSobre p{
+    padding-bottom: 40px;
+}
+.mainSobre a{
+    text-decoration: none;
+    color: #000000;
+}
+.mainSobre a:hover{
+    color: #1E91F7;
+    transition: 0.2s ease-in-out;
+}

@@ -54,6 +54,19 @@ nav div.logo {
   transition: 0.5s ease-in-out;
   
 }
+span{
+  width: 100px;
+  height: 40px;
+
+  color: #ffffff;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1E91F7;
+}
 /* RESPONSIVIDADE DO MENU */
 @media screen and (max-width: 600px) {
   nav{

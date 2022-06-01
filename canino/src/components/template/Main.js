@@ -6,7 +6,7 @@ import Banner from './Banner';
 export default function Main(props) {
     return (
         <div className="content">
-            <main>
+            <main className="main">
                 <div>
                     <Banner />
 

@@ -6,8 +6,9 @@ div.content {
     margin: auto;
 }
 
-main>div {
+.main>div {
     background-color: rgb(243, 244, 246);
+    margin: 20px 0px 20px 0px;
 }
 .espaço{
     display: flex;
@@ -36,6 +37,7 @@ main>div {
     background-color: #90c4f1;
     transition: 0.25s ease-in-out;
 }
+
 
 @media screen and (max-width: 600px) {
     main{
