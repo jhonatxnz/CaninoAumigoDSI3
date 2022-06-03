@@ -35,6 +35,9 @@ export default function Doar(props) {
     console.log(novaDoacao)
 
     axios.post('https://localhost:7042/api/animal', novaDoacao)
+
+    window.alert("Incluiu animal, ou era pra ter inserido ")
+
   }
 
   return (
@@ -44,49 +47,42 @@ export default function Doar(props) {
         <h2>Preencha o formulário!</h2>
 
         <form className="inclui-container" onSubmit={enviarFormulario}>
-          <label>
-            Nome:
-          </label>
-          <input type="text" name="nome" value={novaDoacao.nome} onChange={atulizarNovaDoacao} />
-          <label>
-            Raça:
-          </label>
-          <input type="text" name="raca" value={novaDoacao.raca} onChange={atulizarNovaDoacao} />
-          <label>
-            Cor:
-          </label>
-          <input type="text" name="cor" value={novaDoacao.cor} onChange={atulizarNovaDoacao} />
-          <label>
-            Idade:
-          </label>
-          <input type="number" name="idade" value={novaDoacao.idade} onChange={atulizarNovaDoacao} />
-          <label>
-            Descrição:
-          </label>
-          <input type="text" name="descricao" placeholder="Coloque a descrição do seu bichinho" value={novaDoacao.descricao} onChange={atulizarNovaDoacao} />
-          <label>
-            Gênero:
-          </label>
-          <input type="text" name="genero" value={novaDoacao.genero} onChange={atulizarNovaDoacao} />
-          <label>
-            Informações cruciais:
-          </label>
-          <input type="text" name="vacinacao"  placeholder="Ex:vacinação" value={novaDoacao.vacinacao} onChange={atulizarNovaDoacao} />
-          <label>
-            Porte:
-          </label>
-          <select name="idPorte" onChange={atulizarNovaDoacao} value={novaDoacao.idPorte}>
+          <label>Nome:</label>
+          <input type="text" name="nome" value={novaDoacao.nome} onChange={atulizarNovaDoacao} className="input-grande"/>
+          
+          <label>Raça:</label>
+          <input type="text" name="raca" value={novaDoacao.raca} onChange={atulizarNovaDoacao} className="input-pequeno"/>
+
+          <label>Cor:</label>
+          <input type="text" name="cor" value={novaDoacao.cor} onChange={atulizarNovaDoacao} className="input-pequeno"/>
+
+          <label>Idade:</label>
+          <input type="number" name="idade" value={novaDoacao.idade} onChange={atulizarNovaDoacao} className="input-pequeno"/>
+
+          <label>Descrição:</label>
+          <input type="text" name="descricao" placeholder="Coloque a descrição do seu bichinho" value={novaDoacao.descricao} onChange={atulizarNovaDoacao} className="input-grande"/>
+
+          <label>Gênero:</label>
+          <input type="text" name="genero" value={novaDoacao.genero} onChange={atulizarNovaDoacao} className="input-pequeno"/>
+
+          <label>Informações cruciais:</label>
+          <input type="text" name="vacinacao"  placeholder="Ex:vacinação" value={novaDoacao.vacinacao} onChange={atulizarNovaDoacao} className="input-grande"/>
+          
+          <label>Porte:</label>
+          <select name="idPorte" onChange={atulizarNovaDoacao} value={novaDoacao.idPorte} className="input-pequeno">
             <option value="1">Grande</option>
             <option value="2">Médio</option>
             <option value="3">Pequeno</option>
           </select>
-          <label>
-            Cidade:
-          </label>
-          <select name="idCidade" onChange={atulizarNovaDoacao} value={novaDoacao.idCidade}>
+
+          <label>Cidade:</label>
+          <select name="idCidade" onChange={atulizarNovaDoacao} value={novaDoacao.idCidade} className="input-pequeno">
             <option value="1">Sumare</option>
             <option value="2">Campinas</option>
           </select>
+
+          <input type="file" className="input-imagem" accept="image/*" ></input>
+          
           <button className="btnSalvar"
             onClick={e => enviarFormulario(e)} >
             Salvar

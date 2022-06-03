@@ -29,3 +29,8 @@ div.content {
     color: #1E91F7;
     transition: 0.2s ease-in-out;
 }
+@media screen and (max-width: 600px) {
+    .mainSobre{
+        width: 100%;
+    }
+  } 
