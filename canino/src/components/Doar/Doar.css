@@ -7,6 +7,8 @@ div.content {
 }
 
 .mainDoar {
+    /* background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100'); */
+
     width: 50%;
     height: auto;
 
@@ -16,6 +18,20 @@ div.content {
 
     background-color: rgb(255, 255, 255);
     text-align: center;
+}
+
+.mainDoar h1 {
+    color: #1E91F7;
+}
+
+.mainDoar h2 {
+    color: #1E91F7;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-self: center;
 
 }
 
@@ -25,6 +41,12 @@ div.content {
     border-radius: 5px;
     padding: 10px;
     text-align: left;
+    
+    /* backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125); */
 }
 
 .inclui-container label {
@@ -43,7 +65,8 @@ div.content {
     padding: 10px;
     font-size: larger;
 }
-.input-imagem{
+
+.input-imagem {
     padding: 20px 10px;
     width: 200px;
     background-color: #333;
@@ -63,4 +86,10 @@ div.content {
     cursor: pointer;
     margin: 5px 5px 5px 30px;
     color: #ffffff;
+}
+
+@media screen and (max-width: 600px) {
+    .mainDoar {
+        width: 100%;
+    }
 }

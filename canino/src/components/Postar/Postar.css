@@ -1,1 +1,90 @@
 
+div.content {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    margin: auto;
+}
+
+.mainPostar {
+    width: 50%;
+    height: auto;
+
+    border-radius: 10px;
+    padding: 50px;
+    margin: 20px 0px 20px 0px;
+
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+
+}
+.mainPostar h1{
+    color: #1E91F7;
+}
+.mainPostar h2{
+    color: #1E91F7;
+}
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-self:center;
+
+}
+
+.inclui-container {
+    width: 80%;
+    background-color: #d5e8f8;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+
+    /* backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125); */
+}
+
+.inclui-container label {
+    font-size: larger;
+}
+
+.input-grande {
+    width: 100%;
+    padding: 10px;
+    font-size: larger;
+
+}
+
+.input-pequeno {
+    width: 100%;
+    padding: 10px;
+    font-size: larger;
+}
+.input-imagem{
+    padding: 20px 10px;
+    width: 200px;
+    background-color: #333;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btnSalvar {
+    background-color: #1E91F7;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 5px 5px 30px;
+    color: #ffffff;
+}
+@media screen and (max-width: 600px) {
+    .mainPostar {
+        width: 100%;
+    }
+}
