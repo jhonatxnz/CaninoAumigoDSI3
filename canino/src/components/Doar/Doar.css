@@ -7,8 +7,6 @@ div.content {
 }
 
 .mainDoar {
-    /* background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100'); */
-
     width: 50%;
     height: auto;
 
@@ -41,12 +39,13 @@ div.content {
     border-radius: 5px;
     padding: 10px;
     text-align: left;
-    
-    /* backdrop-filter: blur(16px) saturate(180%);
+
+    backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.5);
+    background-color: rgba(17, 25, 40, 0);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125); */
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
 }
 
 .inclui-container label {
@@ -76,15 +75,19 @@ div.content {
     display: block;
     margin-top: 10px;
     cursor: pointer;
+    width: 100%;
 }
 
 .btnSalvar {
-    background-color: #1E91F7;
+    width: 100%;
+    margin-top: 10px;
     padding: 12px 20px;
+
     border: none;
     border-radius: 4px;
+
     cursor: pointer;
-    margin: 5px 5px 5px 30px;
+    background-color: #1E91F7;
     color: #ffffff;
 }
 

@@ -77,13 +77,18 @@ export default function Doar(props) {
               <option value="3">Pequeno</option>
             </select>
 
+            <label>Estado:</label>
+            <select name="estado" className="input-pequeno">
+              <option value="1">São Paulo</option>
+            </select>
+
             <label>Cidade:</label>
             <select name="idCidade" onChange={atulizarNovaDoacao} value={novaDoacao.idCidade} className="input-pequeno">
               <option value="1">Sumare</option>
               <option value="2">Campinas</option>
             </select>
 
-            <input type="file" className="input-imagem" accept="image/*" ></input>
+            <input type="file" className="input-imagem" accept="image/*"  hidden ></input>
 
             <button className="btnSalvar"
               onClick={e => enviarFormulario(e)} >

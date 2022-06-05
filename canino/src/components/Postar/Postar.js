@@ -50,17 +50,18 @@ export default function Postar(props) {
             <label>Nome:</label>
             <input type="text" name="nome" value={novoProcurado.nome} onChange={atulizarnovoProcurado} className="input-grande" placeholder="Nome do animal" />
 
-            <label>Email:</label>
-            <input type="text" name="email" value={novoProcurado.email} onChange={atulizarnovoProcurado} className="input-pequeno" placeholder="Email principal" />
-
-            <label>Telefone:</label>
-            <input type="text" name="telefone" value={novoProcurado.telefone} onChange={atulizarnovoProcurado} className="input-pequeno" placeholder="(XX)XXXXX-XXXX" />
+            
 
             
 
+            <label>Estado:</label>
+            <select name="estado" className="input-pequeno">
+              <option value="1">São Paulo</option>
+            </select>
+
             <label>Cidade:</label>
             <select name="idCidade" onChange={novoProcurado} value={novoProcurado.idCidade} className="input-pequeno">
-              <option value="1">Sumare</option>
+              <option value="1">Sumaré</option>
               <option value="2">Campinas</option>
             </select>
 
