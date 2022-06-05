@@ -1,3 +1,4 @@
+/* se repete em outra page */
 div.content {
     display: flex;
     justify-content: center;
@@ -33,7 +34,7 @@ div.content {
     align-self: center;
 
 }
-
+/* se repete em outra page */
 .inclui-container {
     width: 80%;
     background-color: #d5e8f8;
@@ -91,6 +92,11 @@ div.content {
     background-color: #1E91F7;
     color: #ffffff;
 }
+.btnSalvar:hover{
+    background-color: #90c4f1;
+    transition: 0.25s ease-in-out;
+}
+
 
 @media screen and (max-width: 600px) {
     .mainPostar {

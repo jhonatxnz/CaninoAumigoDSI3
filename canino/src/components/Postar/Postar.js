@@ -4,7 +4,7 @@ import axios from 'axios';
 const urlAPI = "https://localhost:7042/api/animal";
 
 const initialState = {
-  novoProcurado: { nome: '', email: '', complemento: '', imagem: '', idCidade: 0 },
+  novoProcurado: { nome: '',  complemento: '', imagem: '', idCidade: 0 },
   lista: []
 }
 
@@ -49,16 +49,18 @@ export default function Postar(props) {
           <form className="inclui-container" onSubmit={enviarFormulario}>
             <label>Nome:</label>
             <input type="text" name="nome" value={novoProcurado.nome} onChange={atulizarnovoProcurado} className="input-grande" placeholder="Nome do animal" />
+            {/* ai ai... */}
+            <label>Email:</label>
+            <input type="text" name="email"  className="input-pequeno" placeholder="Email principal" />
 
-            
-
-            
+            <label>Telefone:</label>
+            <input type="text" name="telefone" className="input-pequeno" placeholder="(XX)XXXXX-XXXX" />
 
             <label>Estado:</label>
             <select name="estado" className="input-pequeno">
               <option value="1">São Paulo</option>
             </select>
-
+            
             <label>Cidade:</label>
             <select name="idCidade" onChange={novoProcurado} value={novoProcurado.idCidade} className="input-pequeno">
               <option value="1">Sumaré</option>

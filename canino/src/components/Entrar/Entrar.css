@@ -1,0 +1,119 @@
+
+/* se repete em outra page */
+div.content {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    margin: auto;
+}
+
+.mainEntrar {
+    width: 50%;
+    height: auto;
+
+    border-radius: 10px;
+    padding: 50px;
+    margin: 20px 0px 20px 0px;
+
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container
+{
+    backdrop-filter: blur(3px) saturate(180%);
+    -webkit-backdrop-filter: blur(3px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.64);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    height: 70vh;
+    width: 50vh;
+    margin: 100px;
+    padding: 80px;
+    text-align: center;
+    display: block;
+}
+.user-details{
+    margin-top: 50px;
+}
+.details{
+    background-color: transparent;
+    padding: 10px;
+
+}
+.container .title
+{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .title::before
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #268bff, #87b7ff);
+}
+
+
+
+.user-details .input-box input
+{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid
+{
+    border-color: #268bff;
+}
+
+form .btnEntrar
+{
+    height: 45px;
+    margin: 45px 0;
+}
+form .btnEntrar
+{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background-color: #1E91F7;
+}
+form .btnEntrar:hover
+{
+    background-color: #90c4f1;
+    transition: 0.25s ease-in-out;
+}
+@media screen and (max-width: 600px) {
+    .mainEntrar {
+        width: 100%;
+    }
+}
