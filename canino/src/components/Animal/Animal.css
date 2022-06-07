@@ -1,0 +1,74 @@
+/* se repete em outra page */
+div.content {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    margin: auto;
+}
+
+.mainAnimal {
+    width: 80%;
+    height: auto;
+
+    border-radius: 10px;
+    padding: 50px;
+    margin: 20px 0px 20px 0px;
+
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+
+}
+
+.mainAnimal h1 {
+    color: #1E91F7;
+}
+.dupla{
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    width: auto;
+    height: auto;
+}
+.imageAnimal{
+    width: 100%;
+    height: 790px;
+}
+.aImagem{
+    width: 50%;
+    height: auto;
+}
+.aInfo{
+    width: 50%;
+    height: auto;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.aInfo label{
+    font-size: larger;
+}
+.aInfo p{
+    font-size: larger;
+    padding-bottom: 40px;
+}
+.btnAdotar {
+    width: 50%;
+    margin-top: 10px;
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+    background-color: #1E91F7;
+    color: #ffffff;
+}
+.btnAdotar:hover{
+    background-color: #90c4f1;
+    transition: 0.25s ease-in-out;
+}

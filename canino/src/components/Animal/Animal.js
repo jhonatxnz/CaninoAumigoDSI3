@@ -13,22 +13,36 @@ const initialState = {
 
 export default function Animal(props) {
     const [animal, setAnimal] = useState(initialState.animal)
-    
+
     const { idAnimal } = useParams()
 
     useEffect(() => {
         axios.get(`${urlAPI}/${idAnimal}`)
-        .then((resp) => {
-            setAnimal(resp.data)
-        })
+            .then((resp) => {
+                setAnimal(resp.data)
+            })
     }, [])
 
     return (
         <div className="content">
-            <main className="main">
-                <div>
-                    <h1>{animal.nome}</h1>
-                    <img src={animal.imagem} />
+            <main className="mainAnimal">
+                <div className="dupla">
+                    <div className="aImagem">
+                        <img src={animal.imagem} className="imageAnimal"/>
+                    </div>
+                    <div class="aInfo">
+                        <h1>{animal.nome}</h1>
+                        <p>Raça: {animal.raca}</p>
+                        <p>Cor: {animal.cor}</p>
+                        <p>Idade: {animal.idade}</p>
+                        <label>Descrição de {animal.nome}: </label>
+                        <p>{animal.descricao}</p>
+                        <p>Sexo: {animal.genero}</p>
+                        <p>Importante: {animal.vacinacao}</p>
+                        <p>Porte: {animal.idPorte}</p>
+                        <p>Cidade: {animal.idCidade}</p>
+                        <button className="btnAdotar">Adotar</button><br/>
+                    </div>
                 </div>
             </main>
         </div>
