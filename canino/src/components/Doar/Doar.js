@@ -4,7 +4,7 @@ import axios from 'axios';
 const urlAPI = "https://localhost:7042/api/animal";
 
 const initialState = {
-  novaDoacao: { nome: '', raca: '', cor: '', idade: 0, descricao: '', genero: '', vacinacao: '', idPorte: 0, idCidade: 0 },
+  novaDoacao: { nome: '', raca: '', cor: '', idade: 0, descricao: '', genero: '', vacinacao: '', idPorte: 0, idCidade: 0, imagem: ''},
   lista: []
 }
 
@@ -23,6 +23,31 @@ export default function Doar(props) {
     })
 
     console.log(novaDoacao)
+  }
+
+  function adicionarImagem(event) {
+    const { files } = event.target
+
+    console.log(files[0].size)
+
+    if (files[0].size <= 100000) {
+      const reader = new FileReader()
+
+      reader.readAsDataURL(files[0])
+  
+      reader.onload = () => {
+        const imagem = reader.result
+  
+        setNovaDoacao({ 
+          ...novaDoacao, 
+          imagem,
+        })
+      }
+    }
+    else
+    {
+      alert('Imagem muito grande! A imagem deve ter 100kb ou menos.')
+    }
   }
 
   function enviarFormulario(event) {
@@ -88,7 +113,7 @@ export default function Doar(props) {
               <option value="2">Campinas</option>
             </select>
 
-            <input type="file" className="input-imagem" accept="image/*"  hidden ></input>
+            <input type="file" name="imagem" className="input-imagem" accept="image/*" onChange={adicionarImagem}  hidden ></input>
 
             <button className="btnSalvar"
               onClick={e => enviarFormulario(e)} >
