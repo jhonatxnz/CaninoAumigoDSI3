@@ -41,8 +41,8 @@ export default function Rodape(props) {
 
                 <div>
                     <h2>Redes sociais</h2>
-                    <a href="/instagram">Facebook</a><br />
-                    <a href="/instagram">Instagram</a>
+                    <a href="https://www.facebook.com/CaninoAumigo-105853458820645" target="blank">Facebook</a><br />
+                    <a href="https://instagram.com/caninoaumigo?igshid=YmMyMTA2M2Y=" target="blank">Instagram</a>
                 </div>
 
                 <div>

@@ -92,7 +92,7 @@ export default function Doar(props) {
             <input type="number" name="idade" value={novaDoacao.idade} onChange={atulizarNovaDoacao} className="input-pequeno" />
 
             <label>Descrição:</label>
-            <input type="text" name="descricao" placeholder="Coloque a descrição do seu bichinho" value={novaDoacao.descricao} onChange={atulizarNovaDoacao} className="input-grande" />
+            <input type="text" maxLength="200" name="descricao" placeholder="Coloque a descrição do seu bichinho" value={novaDoacao.descricao} onChange={atulizarNovaDoacao} className="input-grande" />
 
             <label>Gênero:</label>
             <input type="text" name="genero" value={novaDoacao.genero} onChange={atulizarNovaDoacao} className="input-pequeno" />
@@ -126,20 +126,7 @@ export default function Doar(props) {
             </button>
           </form>
         </div>
-        <div className="cartao">
-                        <img src={novaDoacao.imagem} alt="gatinho" style={tam}></img>
-                        <div id="container">
-                            <a href="/gato">
-                                <h2>
-                                    {novaDoacao.nome}
-                                </h2>
-                            </a>
-
-                            <p>
-                                {novaDoacao.idCidade}
-                            </p>
-                        </div>
-                    </div>
+        
       </main>
     </div>
 
