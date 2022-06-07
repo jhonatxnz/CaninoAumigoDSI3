@@ -15,7 +15,7 @@ export default class Main extends Component {
 
     componentDidMount() {
         axios(urlAPI).then(resp => {
-            this.setState({ lista: resp.data })
+            this.setState({ lista: resp.data.slice(0, 5) })
         })
     }
     getListaAtualizada(animal, add = true) {
@@ -46,7 +46,7 @@ export default class Main extends Component {
                         <div className="cartao">
                         <img src={animal.imagem} alt="imagem do animal"  className="imgAnimal"></img>
                         <div id="container">
-                            <a href="/gato">
+                            <a href={`/animal/${animal.idAnimal}`}>
                                 <p>
                                     {animal.nome}
                                 </p>

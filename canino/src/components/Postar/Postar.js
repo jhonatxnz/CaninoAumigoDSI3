@@ -30,7 +30,7 @@ export default function Postar(props) {
 
     console.log(files[0].size)
 
-    if (files[0].size <= 100000) {
+    if (files[0].size <= 500000) {
       const reader = new FileReader()
 
       reader.readAsDataURL(files[0])
@@ -45,7 +45,7 @@ export default function Postar(props) {
       }
     }
     else {
-      alert('Imagem muito grande! A imagem deve ter 100kb ou menos.')
+      alert('Imagem muito grande! A imagem deve ter 500kb ou menos.')
     }
   }
 

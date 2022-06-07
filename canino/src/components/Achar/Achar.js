@@ -1,10 +1,10 @@
-import './Adotar.css';
+import './Achar.css';
 import React, {Component} from 'react';
 import { useState } from 'react';
 import axios from 'axios';
-const urlAPI = "https://localhost:7042/api/animal";
+const urlAPI = "https://localhost:7042/api/animalPerdido";
 const initialState = {
-  animal: { nome: '', raca: '', cor: '', idade: 0, descricao: '', genero: '', vacinacao: '', idPorte: 0, idCidade: 0, imagem: '' },
+  animalPerdido: { nome: '', telefone:'', email: '', complemeto: '', imagem: '', idCidade: 0 },
   lista: []
 }
 export default class Adotar extends Component {
@@ -14,35 +14,35 @@ export default class Adotar extends Component {
         this.setState({ lista: resp.data })
     })
 }
-getListaAtualizada(animal, add = true) {
-    const lista = this.state.lista.filter(a => a.id !== animal.id);
-    if (add) lista.unshift(animal);
+getListaAtualizada(animalPerdido, add = true) {
+    const lista = this.state.lista.filter(a => a.id !== animalPerdido.id);
+    if (add) lista.unshift(animalPerdido);
     return lista;
 }
-carregar(animal){
-    this.setState({ animal });
+carregar(animalPerdido){
+    this.setState({ animalPerdido });
 }
 render(){
   return (
     <div className="content">
-                <main className="mainAdotar">
+                <main className="mainAchar">
                     <div>
     
-                        <h2>Aqui estão todos os nossos aumigos!</h2>
+                        <h2>Aqui estão todos os nossos aumigos perdidos!</h2>
                         
                         <div className="animalAlinhado">
-                        {this.state.lista.map((animal) =>
+                        {this.state.lista.map((animalPerdido) =>
                         <div className="cartao">
-                        <img src={animal.imagem} alt="imagem do animal"  className="imgAnimal"></img>
+                        <img src={animalPerdido.imagem} alt="imagem do animalPerdido"  className="imgAnimal"></img>
                         <div id="container">
                             <a href="/gato">
                                 <p>
-                                    {animal.nome}
+                                    {animalPerdido.nome}
                                 </p>
                             </a>
 
                             <p>
-                                {animal.idCidade}
+                                {animalPerdido.idCidade}
                             </p>
                         </div>
                     </div>
