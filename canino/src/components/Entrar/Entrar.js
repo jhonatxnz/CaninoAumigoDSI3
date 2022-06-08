@@ -8,7 +8,20 @@ const initialState = {
 
 }
 export default function Entrar(props) {
+
   const [contaExistente, setContaExistente] = useState(initialState.contaExistente)
+  function atualizarConta(event) {
+    const { name, value } = event.target
+
+    console.log(name, value)
+
+    setContaExistente({
+      ...contaExistente,
+      [name]: value
+    })
+
+    console.log(contaExistente)
+  }
   return (
     <div className="content">
       <main className="mainEntrar">
@@ -18,11 +31,11 @@ export default function Entrar(props) {
             <div class="user-details">
               <div class="input-box">
                 <span class="details">Email:</span>
-                <input type="text" value={contaExistente.email} id="email" placeholder="Insira seu Email" required />
+                <input type="text" name="email" value={contaExistente.email}  onChange={atualizarConta} id="email" placeholder="Insira seu Email" required />
               </div>
               <div class="input-box">
                 <span class="details">Senha:</span>
-                <input type="text" value={contaExistente.senha} id="senha" placeholder="Insira sua Senha" required />
+                <input type="password" name="senha" value={contaExistente.senha} onChange={atualizarConta} id="senha" placeholder="Insira sua Senha" required />
               </div>
             </div>
 

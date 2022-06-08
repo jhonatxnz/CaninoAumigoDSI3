@@ -30,7 +30,7 @@ export default function Postar(props) {
 
     console.log(files[0].size)
 
-    if (files[0].size <= 100000) {
+   if (files[0].size <= 500000) {
       const reader = new FileReader()
 
       reader.readAsDataURL(files[0])

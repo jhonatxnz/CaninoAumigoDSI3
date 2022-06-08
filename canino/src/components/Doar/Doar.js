@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import './Doar.css';
 import axios from 'axios';
-const urlAPI = "https://localhost:7042/api/animal";
+const urlAPI = "http://localhost:5271/api/animal";
+/////////////here
 
+const tam = {
+  width: '100%',
+
+};
 const initialState = {
   novaDoacao: { nome: '', raca: '', cor: '', idade: 0, descricao: '', genero: '', vacinacao: '', idPorte: 0, idCidade: 0, imagem: ''},
   lista: []
@@ -30,7 +35,7 @@ export default function Doar(props) {
 
     console.log(files[0].size)
 
-    if (files[0].size <= 100000) {
+    if (files[0].size <= 500000) {
       const reader = new FileReader()
 
       reader.readAsDataURL(files[0])
@@ -87,9 +92,9 @@ export default function Doar(props) {
             <input type="number" name="idade" value={novaDoacao.idade} onChange={atulizarNovaDoacao} className="input-pequeno" />
 
             <label>Descrição:</label>
-            <input type="text" name="descricao" placeholder="Coloque a descrição do seu bichinho" value={novaDoacao.descricao} onChange={atulizarNovaDoacao} className="input-grande" />
+            <input type="text" maxLength="200" name="descricao" placeholder="Coloque a descrição do seu bichinho" value={novaDoacao.descricao} onChange={atulizarNovaDoacao} className="input-grande" />
 
-            <label>Gênero:</label>
+            <label>Sexo:</label>
             <input type="text" name="genero" value={novaDoacao.genero} onChange={atulizarNovaDoacao} className="input-pequeno" />
 
             <label>Informações cruciais:</label>
@@ -121,6 +126,7 @@ export default function Doar(props) {
             </button>
           </form>
         </div>
+        
       </main>
     </div>
 
