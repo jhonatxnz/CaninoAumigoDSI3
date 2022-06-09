@@ -50,27 +50,27 @@ export default function Cadastrar(props) {
               <div className='input-group'>
                 <div className="input-box">
                   <label>CPF:</label>
-                  <input type="text" name="cpf" value={novoCadastro.cpf} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite seu CPF' />
+                  <input type="text" maxLength="11" name="cpf" value={novoCadastro.cpf} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite seu CPF' />
                 </div>
 
                 <div className="input-box">
                   <label>Nome:</label>
-                  <input type="text" name="nome" value={novoCadastro.nome} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite seu Nome' />
+                  <input type="text" maxLength="30" name="nome" value={novoCadastro.nome} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite seu Nome' />
                 </div>
 
                 <div className="input-box">
                   <label>Telefone:</label>
-                  <input type="tel" name="telefone" value={novoCadastro.telefone} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='(xx) xxxxx-xxxx' />
+                  <input type="tel" maxLength="11" name="telefone" value={novoCadastro.telefone} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='(xx) xxxxx-xxxx' />
                 </div>
 
                 <div className="input-box">
                   <label>Email:</label>
-                  <input type="text" name="email" value={novoCadastro.email} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite seu Email' />
+                  <input type="text" maxLength="40" name="email" value={novoCadastro.email} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite seu Email' />
                 </div>
 
                 <div className="input-box">
                   <label>Endereço:</label>
-                  <input type="text" name="endereco" value={novoCadastro.endereco} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite seu Endereço' />
+                  <input type="text" maxLength="100" name="endereco" value={novoCadastro.endereco} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite seu Endereço' />
                 </div>
 
                 <div className="input-box">
@@ -99,24 +99,24 @@ export default function Cadastrar(props) {
 
                 <div className="input-box">
                   <label>Idade:</label>
-                  <input type="number" name="idade" value={novoCadastro.idade} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite sua Idade' />
+                  <input type="number" min="0" max="130" name="idade" value={novoCadastro.idade} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite sua Idade' />
                 </div>
-
+{/* ué */}
                 <div className="input-box">
                   <label>Gênero:</label>
                   <input type="text" name="genero" value={novoCadastro.genero} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite seu gênero' />
                 </div>
-
+{/* ué */}
 
 
                 <div className="input-box">
                   <label>Senha:</label>
-                  <input type="password" name="senha" value={novoCadastro.senha} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite sua senha' />
+                  <input type="password" maxLength="20" name="senha" value={novoCadastro.senha} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite sua senha' />
                 </div>
 
                 <div className="input-box">
                   <label>Confirme sua senha</label>
-                  <input type="password" name="confirmacaoSenha" value={novoCadastro.s} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite sua senha' />
+                  <input type="password" maxLength="20" name="confirmacaoSenha" value={novoCadastro.s} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite sua senha' />
                 </div>
                 <div className='oBotao'>
                   <button className="btnSalvarC"

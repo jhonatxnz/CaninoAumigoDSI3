@@ -72,11 +72,11 @@ export default function Postar(props) {
         <div className="formulario">
           <form className="inclui-container" onSubmit={enviarFormulario}>
             <label>Nome:</label>
-            <input type="text" name="nome" value={novoProcurado.nome} onChange={atulizarnovoProcurado} className="input-grande" placeholder="Nome do animal" />
+            <input type="text" maxLength="30" name="nome" value={novoProcurado.nome} onChange={atulizarnovoProcurado} className="input-grande" placeholder="Nome do animal" />
             <label>Telefone:</label>
-            <input type="text" name="telefone" value={novoProcurado.telefone} onChange={atulizarnovoProcurado} className="input-grande" placeholder="(XX)XXXXX-XXXX" />
+            <input type="text" maxLength="30" name="telefone" value={novoProcurado.telefone} onChange={atulizarnovoProcurado} className="input-grande" placeholder="Somente números" />
             <label>Email:</label>
-            <input type="email" name="email" value={novoProcurado.email} onChange={atulizarnovoProcurado} className="input-grande" placeholder="Email principal" />
+            <input type="email" maxLength="40" name="email" value={novoProcurado.email} onChange={atulizarnovoProcurado} className="input-grande" placeholder="Email principal" />
             <label>Estado:</label>
             <select name="estado" className="input-pequeno">
               <option value="1">São Paulo</option>
@@ -89,7 +89,7 @@ export default function Postar(props) {
             </select>
             <label>Complemeto:</label>
             
-            <input type="text" name="complemento" placeholder="Ex:onde viu seu animal pela última vez" value={novoProcurado.complemento} onChange={atulizarnovoProcurado} className="input-grande" />
+            <input type="text" maxLength="400" name="complemento" placeholder="Ex:onde viu seu animal pela última vez" value={novoProcurado.complemento} onChange={atulizarnovoProcurado} className="input-grande" />
             
             <input type="file" name="imagem" className="input-imagem" accept="image/*" onChange={adicionarImagem} hidden ></input>
 

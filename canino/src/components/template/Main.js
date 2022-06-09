@@ -6,7 +6,7 @@ import axios from 'axios';
 const urlAPI = "https://localhost:7042/api/animal";
 
 const initialState = {
-    animal: { nome: '', raca: '', cor: '', idade: 0, descricao: '', genero: '', vacinacao: '', idPorte: 0, idCidade: 0, imagem: '' },
+    animal: { nome: '', raca: '', cor: '', idade: 0, descricao: '', genero: '', vacinacao: '', idPorte: 0, idCidade: 0, imagem: '', cidade: {} },
     lista: []
 }
 
@@ -14,9 +14,22 @@ export default class Main extends Component {
     state = { ...initialState }
 
     componentDidMount() {
-        axios(urlAPI).then(resp => {
-            this.setState({ lista: resp.data.slice(0, 5) })
-        })
+            axios("https://localhost:7042/api/cidade")
+                .then(resp => {
+                    const cidades = resp.data
+
+                    axios(urlAPI).then(resp => {
+                        const animais = []
+
+                        resp.data.map(animal => {
+                            const cidade = cidades.filter(c => c.idCidade === animal.idCidade)[0]
+
+                            animais.push({ ...animal, cidade })
+                        })
+
+                        this.setState({ lista: animais.slice(0, 5) })
+                    })
+                })
     }
     getListaAtualizada(animal, add = true) {
         const lista = this.state.lista.filter(a => a.id !== animal.id);
@@ -47,19 +60,17 @@ export default class Main extends Component {
                                     <img src={animal.imagem} alt="imagem do animal" className="imgAnimal"></img>
                                     <div id="container">
                                         <a href={`/animal/${animal.idAnimal}`}>
-                                            <p>
                                                 {animal.nome}
-                                            </p>
                                         </a>
 
                                         <p>
-                                            {animal.idCidade}
+                                            {animal.cidade.nome}
                                         </p>
                                     </div>
                                 </div>
                             )}
                         </div>
-
+                    
                     </div>
                 </main>
             </div>

@@ -10,10 +10,24 @@ const initialState = {
 export default class Adotar extends Component {
     state = { ...initialState }
     componentDidMount() {
-        axios(urlAPI).then(resp => {
-            this.setState({ lista: resp.data })
-        })
-    }
+        axios("https://localhost:7042/api/cidade")
+            .then(resp => {
+                const cidades = resp.data
+
+                axios(urlAPI).then(resp => {
+                    const animais = []
+
+                    resp.data.map(animal => {
+                        const cidade = cidades.filter(c => c.idCidade === animal.idCidade)[0]
+
+                        animais.push({ ...animal, cidade })
+                    })
+
+                    this.setState({ lista: animais })
+                })
+            })
+}
+
     getListaAtualizada(animal, add = true) {
         const lista = this.state.lista.filter(a => a.id !== animal.id);
         if (add) lista.unshift(animal);
@@ -46,7 +60,7 @@ export default class Adotar extends Component {
                                         </a>
 
                                         <p>
-                                            {animal.idCidade}
+                                            {animal.cidade.nome}
                                         </p>
                                     </div>
                                 </div>

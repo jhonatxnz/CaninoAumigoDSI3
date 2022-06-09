@@ -123,4 +123,8 @@ div.content {
         .headerCadastrar{
             height: auto;
         }
+        .input-group{
+            display: flex;
+            flex-direction: column;
+        }
     }

@@ -10,9 +10,22 @@ const initialState = {
 export default class Adotar extends Component {
   state = { ...initialState } 
   componentDidMount() {
-    axios(urlAPI).then(resp => {
-        this.setState({ lista: resp.data })
-    })
+    axios("https://localhost:7042/api/cidade")
+            .then(resp => {
+                const cidades = resp.data
+
+                axios(urlAPI).then(resp => {
+                    const animaisPerdidos = []
+
+                    resp.data.map(animalPerdido => {
+                        const cidade = cidades.filter(c => c.idCidade === animalPerdido.idCidade)[0]
+
+                        animaisPerdidos.push({ ...animalPerdido, cidade })
+                    })
+
+                    this.setState({ lista: animaisPerdidos })
+                })
+            })
 }
 getListaAtualizada(animalPerdido, add = true) {
     const lista = this.state.lista.filter(a => a.id !== animalPerdido.id);
@@ -42,7 +55,7 @@ render(){
                             </a>
 
                             <p>
-                                {animalPerdido.idCidade}
+                                {animalPerdido.cidade.nome}
                             </p>
                         </div>
                     </div>

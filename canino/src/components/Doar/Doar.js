@@ -80,25 +80,25 @@ export default function Doar(props) {
         <div className="formulario">
           <form className="inclui-container" onSubmit={enviarFormulario}>
             <label>Nome:</label>
-            <input type="text" name="nome" value={novaDoacao.nome} onChange={atulizarNovaDoacao} className="input-grande" />
+            <input type="text" maxLength="30" name="nome" value={novaDoacao.nome} onChange={atulizarNovaDoacao} className="input-grande" />
 
             <label>Raça:</label>
-            <input type="text" name="raca" value={novaDoacao.raca} onChange={atulizarNovaDoacao} className="input-pequeno" />
+            <input type="text" maxLength="30" name="raca" value={novaDoacao.raca} onChange={atulizarNovaDoacao} className="input-pequeno" />
 
             <label>Cor:</label>
-            <input type="text" name="cor" value={novaDoacao.cor} onChange={atulizarNovaDoacao} className="input-pequeno" />
+            <input type="text" maxLength="20" name="cor" value={novaDoacao.cor} onChange={atulizarNovaDoacao} className="input-pequeno" />
 
             <label>Idade:</label>
-            <input type="number" name="idade" value={novaDoacao.idade} onChange={atulizarNovaDoacao} className="input-pequeno" />
+            <input type="number" min="0" max="99" name="idade" value={novaDoacao.idade} onChange={atulizarNovaDoacao} className="input-pequeno" />
 
             <label>Descrição:</label>
             <input type="text" maxLength="200" name="descricao" placeholder="Coloque a descrição do seu bichinho" value={novaDoacao.descricao} onChange={atulizarNovaDoacao} className="input-grande" />
 
             <label>Sexo:</label>
-            <input type="text" name="genero" value={novaDoacao.genero} onChange={atulizarNovaDoacao} className="input-pequeno" />
+            <input type="text" maxLength="11" name="genero" value={novaDoacao.genero} onChange={atulizarNovaDoacao} className="input-pequeno" />
 
             <label>Informações cruciais:</label>
-            <input type="text" name="vacinacao" placeholder="Ex:vacinação" value={novaDoacao.vacinacao} onChange={atulizarNovaDoacao} className="input-grande" />
+            <input type="text" maxLength="200" name="vacinacao" placeholder="Ex:vacinação" value={novaDoacao.vacinacao} onChange={atulizarNovaDoacao} className="input-grande" />
 
             <label>Porte:</label>
             <select name="idPorte" onChange={atulizarNovaDoacao} value={novaDoacao.idPorte} className="input-pequeno">

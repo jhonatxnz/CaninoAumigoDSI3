@@ -31,11 +31,11 @@ export default function Entrar(props) {
             <div class="user-details">
               <div class="input-box">
                 <span class="details">Email:</span>
-                <input type="text" name="email" value={contaExistente.email}  onChange={atualizarConta} id="email" placeholder="Insira seu Email" required />
+                <input type="text" maxLength="40" name="email" value={contaExistente.email}  onChange={atualizarConta} id="email" placeholder="Insira seu Email" required />
               </div>
               <div class="input-box">
                 <span class="details">Senha:</span>
-                <input type="password" name="senha" value={contaExistente.senha} onChange={atualizarConta} id="senha" placeholder="Insira sua Senha" required />
+                <input type="password" maxLength="20" name="senha" value={contaExistente.senha} onChange={atualizarConta} id="senha" placeholder="Insira sua Senha" required />
               </div>
             </div>
 
