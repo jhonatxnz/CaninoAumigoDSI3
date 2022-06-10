@@ -48,8 +48,6 @@ export default function Cadastrar(props) {
   }
   function enviarFormulario(event) {
     event.preventDefault();
-    novoCadastro.cpf = Number(novoCadastro.cpf)
-    novoCadastro.telefone = Number(novoCadastro.telefone)
     novoCadastro.idade = Number(novoCadastro.idade)
     novoCadastro.idCidade = Number(novoCadastro.idCidade)
 

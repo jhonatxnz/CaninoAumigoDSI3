@@ -10,8 +10,13 @@ const initialState = {
     lista: []
 }
 
+const initialStateAnimalPerdido = {
+    animalPerdido: { nome: '', telefone:'', email: '', complemeto: '', imagem: '', idCidade: 0 },
+    lista: []
+}
+
 export default class Main extends Component {
-    state = { ...initialState }
+    state = { ...initialState, ...initialStateAnimalPerdido }
 
     componentDidMount() {
             axios("https://localhost:7042/api/cidade")
@@ -25,6 +30,18 @@ export default class Main extends Component {
                             const cidade = cidades.filter(c => c.idCidade === animal.idCidade)[0]
 
                             animais.push({ ...animal, cidade })
+                        })
+
+                        this.setState({ lista: animais.slice(0, 5) })
+                    })
+
+                    axios("https://localhost:7042/api/animalperdido").then(resp => {
+                        const animaisPerdidos = []
+
+                        resp.data.map(animal => {
+                            const cidade = cidades.filter(c => c.idCidade === animal.idCidade)[0]
+
+                            animaisPerdidos.push({ ...animal, cidade })
                         })
 
                         this.setState({ lista: animais.slice(0, 5) })
@@ -70,6 +87,33 @@ export default class Main extends Component {
                                 </div>
                             )}
                         </div>
+                        <div className="solo">
+                            <a href="/adotar" className="botoes">Veja mais! </a>
+                        </div>
+                        <div className="zzz">
+<div className="animalPerdidoAlinhado">
+                            <h3>Ajude a encontrar esse aumigos que desapareceram!</h3>
+                            
+                            <div className='grid'>
+
+                            {this.state.lista.map((animal) =>
+                                <div className="cartao">
+                                    <img src={animal.imagem} alt="imagem do animal" className="imgAnimal"></img>
+                                    <div id="container">
+                                        <a href={`/animal/${animal.idAnimal}`}>
+                                                {animal.nome}
+                                        </a>
+
+                                        <p>
+                                            {animal.cidade.nome}
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
+                            </div>
+                        </div>
+                        </div>
+                        
                     
                     </div>
                 </main>

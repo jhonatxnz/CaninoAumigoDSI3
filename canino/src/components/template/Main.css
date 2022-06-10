@@ -75,6 +75,32 @@ div.content {
     color: #90c4f1;
     transition: 0.25s ease-in-out;
 }
+.solo{
+    display: flex;
+    justify-content: center;
+}
+.zzz{
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animalPerdidoAlinhado{
+    width: 90%;
+    border-radius: 10px;
+    background-color: #90c4f1;
+    padding: 30px;    
+}
+.animalPerdidoAlinhado h3{
+    padding:20px;    
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    width: 67%;
+}
+
 
 @media screen and (max-width: 600px) {
     main{
