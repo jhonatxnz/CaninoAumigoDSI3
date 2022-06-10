@@ -11,6 +11,7 @@ import Sobre from './components/Sobre/Sobre';
 import Entrar from './components/Entrar/Entrar';
 import Cadastrar from './components/Cadastrar/Cadastrar';
 import Animal from './components/Animal/Animal';
+import AnimalPerdido from './components/AnimalPerdido/AnimalPerdido';
 
 export default function Rotas() {
     return (
@@ -29,6 +30,7 @@ export default function Rotas() {
             <Route path='/entrar' element={<Entrar />} />
             <Route path='/cadastrar' element={<Cadastrar />} />
             <Route path='/animal/:idAnimal' element={<Animal />} />
+            <Route path='/animalPerdido/:idAnimalPerdido' element={<AnimalPerdido />} />
 
             <Route path="*" to='/' />
         </Routes>

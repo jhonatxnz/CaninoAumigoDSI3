@@ -119,7 +119,7 @@ export default function Cadastrar(props) {
 
                 <div className="input-box">
                   <label>Idade:</label>
-                  <input type="number" min="0" max="130" name="idade" value={novoCadastro.idade} onChange={atulizarNovoCadastro} className="input-cadastrar" />
+                  <input type="number" min="18" max="130" name="idade" value={novoCadastro.idade} onChange={atulizarNovoCadastro} className="input-cadastrar" />
                 </div>
 
                 <div className="input-box">

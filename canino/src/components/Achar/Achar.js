@@ -48,7 +48,7 @@ render(){
                         <div className="cartao">
                         <img src={animalPerdido.imagem} alt="imagem do animalPerdido"  className="imgAnimal"></img>
                         <div id="container">
-                        <a href={`/animal/${animalPerdido.idAnimal}`}>
+                        <a href={`/animalPerdido/${animalPerdido.idAnimalPerdido}`}>
                                 <p>
                                     {animalPerdido.nome}
                                 </p>

@@ -91,7 +91,7 @@ export default class Main extends Component {
                             <a href="/adotar" className="botoes">Veja mais! </a>
                         </div>
                         <div className="zzz">
-<div className="animalPerdidoAlinhado">
+                        <div className="animalPerdidoAlinhado">
                             <h3>Ajude a encontrar esse aumigos que desapareceram!</h3>
                             
                             <div className='grid'>

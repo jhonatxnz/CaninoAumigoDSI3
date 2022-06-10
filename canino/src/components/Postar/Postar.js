@@ -84,8 +84,24 @@ export default function Postar(props) {
 
             <label>Cidade:</label>
             <select name="idCidade" onChange={atulizarnovoProcurado} value={novoProcurado.idCidade} className="input-pequeno">
-              <option value="1">Sumare</option>
-              <option value="2">Campinas</option>
+            <option value="1">Americana</option>
+                    <option value="2">Artur Nogueira</option>
+                    <option value="3">Campinas</option>
+                    <option value="4">Cosmópolis</option>
+                    <option value="5">Engenheiro Coelho</option>
+                    <option value="6">Holambra</option>
+                    <option value="7">Hortolândia</option>
+                    <option value="8">Indaiatuba</option>
+                    <option value="9">Itatiba</option>
+                    <option value="10">Jaguariúna</option>
+                    <option value="11">Monte Mor</option>
+                    <option value="12">Morungaba</option>
+                    <option value="13">Nova Odessa</option>
+                    <option value="14">Paulínia</option>
+                    <option value="15">Pedreira</option>
+                    <option value="16">Santa Bárbara d'Oeste</option>
+                    <option value="17">Santo Antônio de Posse</option>
+                    <option value="18">Sumaré</option>
             </select>
             <label>Complemeto:</label>
             
