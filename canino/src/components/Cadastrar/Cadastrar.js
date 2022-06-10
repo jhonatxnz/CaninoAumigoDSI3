@@ -4,7 +4,7 @@ import axios from 'axios';
 const urlAPI = "https://localhost:7042/api/conta";
 
 const initialState = {
-  novoCadastro: { cpf: 0, nome: '', telefone: '', email: '', endereco: '', idade: 0, idCidade: 0 },
+  novoCadastro: { senha:'', cpf: 0, nome: '', telefone: 0, email: '', endereco: '', idade: 0, idCidade: 0 },
   lista: []
 }
 export default function Cadastrar(props) {
@@ -22,18 +22,40 @@ export default function Cadastrar(props) {
 
     console.log(novoCadastro)
   }
+  function adicionarImagem(event) {
+    const { files } = event.target
 
+    console.log(files[0].size)
+
+    if (files[0].size <= 500000) {
+      const reader = new FileReader()
+
+      reader.readAsDataURL(files[0])
+  
+      reader.onload = () => {
+        const imagem = reader.result
+  
+        setNovoCadastro({ 
+          ...novoCadastro, 
+          imagem,
+        })
+      }
+    }
+    else
+    {
+      alert('Imagem muito grande! A imagem deve ter 100kb ou menos.')
+    }
+  }
   function enviarFormulario(event) {
     event.preventDefault();
-
-    novoCadastro.idCidade = Number(novoCadastro.idCidade)
     novoCadastro.cpf = Number(novoCadastro.cpf)
-    novoCadastro.idade = Number(novoCadastro.idade)
     novoCadastro.telefone = Number(novoCadastro.telefone)
+    novoCadastro.idade = Number(novoCadastro.idade)
+    novoCadastro.idCidade = Number(novoCadastro.idCidade)
 
     console.log(novoCadastro)
 
-    axios.post('https://localhost:7042/api/cadastro', novoCadastro)
+    axios.post('https://localhost:7042/api/conta', novoCadastro)
 
   }
   return (
@@ -99,25 +121,15 @@ export default function Cadastrar(props) {
 
                 <div className="input-box">
                   <label>Idade:</label>
-                  <input type="number" min="0" max="130" name="idade" value={novoCadastro.idade} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite sua Idade' />
+                  <input type="number" min="0" max="130" name="idade" value={novoCadastro.idade} onChange={atulizarNovoCadastro} className="input-cadastrar" />
                 </div>
-{/* ué */}
-                <div className="input-box">
-                  <label>Gênero:</label>
-                  <input type="text" name="genero" value={novoCadastro.genero} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite seu gênero' />
-                </div>
-{/* ué */}
-
 
                 <div className="input-box">
                   <label>Senha:</label>
                   <input type="password" maxLength="20" name="senha" value={novoCadastro.senha} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite sua senha' />
                 </div>
-
-                <div className="input-box">
-                  <label>Confirme sua senha</label>
-                  <input type="password" maxLength="20" name="confirmacaoSenha" value={novoCadastro.s} onChange={atulizarNovoCadastro} className="input-cadastrar" placeholder='Digite sua senha' />
-                </div>
+                <input type="file" name="imagem" className="input-imagem" accept="image/*" onChange={adicionarImagem}  hidden ></input>
+                
                 <div className='oBotao'>
                   <button className="btnSalvarC"
                     onClick={e => enviarFormulario(e)} >

@@ -27,12 +27,27 @@ export default function Animal(props) {
 
     const [animal, setAnimal] = useState(initialState.animal)
 
+    const [cidade, setCidade] = useState('');
+
+    const [porte, setPorte] = useState('');
+
     const { idAnimal } = useParams()
 
     useEffect(() => {
         axios.get(`${urlAPI}/${idAnimal}`)
             .then((resp) => {
                 setAnimal(resp.data)
+            })
+            axios(`https://localhost:7042/api/cidade/${idAnimal}`)
+            .then(resp => {
+                const cidade = resp.data
+                setCidade(cidade.nome);
+            })
+
+            axios(`https://localhost:7042/api/porte/${idAnimal}`)
+            .then(resp => {
+                const porte = resp.data
+                setPorte(porte.tamanho);
             })
     }, [])
     function adotar(animal) {
@@ -55,7 +70,7 @@ export default function Animal(props) {
                     <div className="esquerda">
                         <img src={animal.imagem} className="imageAnimal" alt="animal" />
                     </div>
-                    <div class="direita">
+                    <div className="direita">
                         <h1>{animal.nome.toUpperCase()}</h1>
 
                         <h2>Raça </h2>
@@ -77,10 +92,10 @@ export default function Animal(props) {
                         <p>{animal.vacinacao}</p>
 
                         <h2>Porte</h2>
-                        <p>{animal.idPorte}</p>
+                        <p>{porte}</p>
 
                         <h2>Cidade</h2>
-                        <p>{animal.idCidade}</p>
+                        <p>{cidade}</p>
 
                         <button className="btnAdotar" onClick={() => adotar(animal)}>
                             Adotar
