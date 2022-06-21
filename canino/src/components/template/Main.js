@@ -16,7 +16,8 @@ const initialStateAnimalPerdido = {
 }
 
 export default class Main extends Component {
-    state = { ...initialState, ...initialStateAnimalPerdido }
+    state = { ...initialState }
+    state2 = { ...initialStateAnimalPerdido }
 
     componentDidMount() {
             axios("https://localhost:7042/api/cidade")
@@ -32,26 +33,29 @@ export default class Main extends Component {
                             animais.push({ ...animal, cidade })
                         })
 
-                        this.setState({ lista: animais.slice(0, 5) })
+                        this.setState({ lista: animais.slice(20, 25) })
                     })
 
-                    axios("https://localhost:7042/api/animalperdido").then(resp => {
+                    axios(urlAPI + 'perdido').then(resp => {
                         const animaisPerdidos = []
 
-                        resp.data.map(animal => {
-                            const cidade = cidades.filter(c => c.idCidade === animal.idCidade)[0]
+                        resp.data.map(animalPerdido => {
+                            const cidade = cidades.filter(c => c.idCidade === animalPerdido.idCidade)[0]
 
-                            animaisPerdidos.push({ ...animal, cidade })
+                            animaisPerdidos.push({ ...animalPerdido, cidade })
+
                         })
+                        
+                        this.setState({lista: animaisPerdidos.slice(0, 5) })
 
-                        this.setState({ lista: animais.slice(0, 5) })
+                        console.log(animaisPerdidos)
                     })
                 })
     }
     getListaAtualizada(animal, add = true) {
         const lista = this.state.lista.filter(a => a.id !== animal.id);
         if (add) lista.unshift(animal);
-        return lista;
+        return lista ;
     }
     carregar(animal) {
         this.setState({ animal });
@@ -96,16 +100,16 @@ export default class Main extends Component {
                             
                             <div className='grid'>
 
-                            {this.state.lista.map((animal) =>
+                            {this.state.lista.map((animalPerdido) =>
                                 <div className="cartao">
-                                    <img src={animal.imagem} alt="imagem do animal" className="imgAnimal"></img>
+                                    <img src={animalPerdido.imagem} alt="imagem do animal" className="imgAnimal"></img>
                                     <div id="container">
-                                        <a href={`/animal/${animal.idAnimal}`}>
-                                                {animal.nome}
+                                        <a href={`/animalperdido/${animalPerdido.idAnimal}`}>
+                                                {animalPerdido.nome}
                                         </a>
 
                                         <p>
-                                            {animal.cidade.nome}
+                                            {animalPerdido.cidade.nome}
                                         </p>
                                     </div>
                                 </div>
@@ -118,6 +122,7 @@ export default class Main extends Component {
                     </div>
                 </main>
             </div>
+            
         )
     }
 }

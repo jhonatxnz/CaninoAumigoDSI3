@@ -40,9 +40,9 @@ export default function Entrar(props) {
             </div>
 
             <div class="botao">
-              <button className="btnEntrar" >
+              <a className="btnEntrar" href="/conta" >
                 Entrar
-              </button>
+              </a>
             </div>
           </form>
 
