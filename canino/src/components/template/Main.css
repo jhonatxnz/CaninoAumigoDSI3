@@ -104,33 +104,102 @@ div.content {
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     width: 67%;
 }
+.cardsPQ{
+    display: flex;
+    justify-content: space-between;
 
+}
+.oCard{
+    padding: 20px;
+    margin: 10px;
+    width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 206, 196, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+.oCard h3{
+    color: rgb(122, 122, 122);
+}
+.oCard p {
+    color: gray;
+    font-size: 17px;
+}
+.cardsCuidado{
+    display: flex;
+    justify-content: space-between;
+
+}
+.oCuidado{
+    padding: 20px;
+    margin: 10px;
+    width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 206, 196, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+.oCuidado h3{
+    color: rgb(255, 88, 88);
+}
+.oCuidado p{
+    color: gray;
+    font-size: 17px;
+}
+/* @keyframes box-animation{
+    //Animacao pros cards???
+} */
 
 @media screen and (max-width: 600px) {
     main{
         display: flex;
-        flex-direction: column;
-        
+        flex-direction: column;   
+    }
+    main h2{
+        text-align: center;
     }
     .espaço{
         flex-direction: column;
     }
     .botoes{
-        width: 100%;
+        width: 80%;
     }
     .animalAlinhado{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
     }
-    
+   
+    .animalPerdidoAlinhado{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .cardsPQ{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .cardsCuidado{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
   } 
   @media screen and (max-width: 1160px) {
     
     .animalAlinhado{
     grid-template-columns: 1fr 1fr 1fr  ;    
     }
-    
+    .grid{
+        grid-template-columns: 1fr 1fr 1fr  ;    
+        }
   } 
