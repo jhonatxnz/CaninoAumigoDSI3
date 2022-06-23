@@ -26,7 +26,7 @@ export default function Entrar(props) {
     <div className="content">
       <main className="mainEntrar">
         <div class="container">
-          <div class="title">Entrar na Minha Conta</div>
+          <div class="title">Entrar</div>
           <form action="#">
             <div class="user-details">
               <div class="input-box">

@@ -43,10 +43,11 @@ div.content {
 }
 .container 
 .user-details{
-    margin-top: 50px;
+    margin-top: 10px;
 }
 .details{
     background-color: transparent;
+    color: #268bff;
     padding: 10px;
 
 }
@@ -61,10 +62,10 @@ div.content {
 {
     content: '';
     position: absolute;
-    left: 0;
+    left: 1;
     bottom: 0;
     height: 3px;
-    width: 30px;
+    width: 70px;
     background: linear-gradient(135deg, #268bff, #87b7ff);
 }
 
@@ -88,15 +89,10 @@ div.content {
     border-color: #268bff;
 }
 
+
 form .btnEntrar
 {
-    height: 45px;
-    margin: 45px 0;
-}
-form .btnEntrar
-{
-    height: 40px;
-    width: 100%;
+    
     outline: none;
     color: #fff;
     border: none;
@@ -105,6 +101,9 @@ form .btnEntrar
     border-radius: 5px;
     letter-spacing: 1px;
     background-color: #1E91F7;
+    padding: 10px;
+
+    text-decoration: none;
 }
 form .btnEntrar:hover
 {

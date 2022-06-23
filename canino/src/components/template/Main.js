@@ -12,12 +12,11 @@ const initialState = {
 
 const initialStateAnimalPerdido = {
     animalPerdido: { nome: '', telefone: '', email: '', complemeto: '', imagem: '', idCidade: 0 },
-    lista: []
+    listaAnimaisPerdidos: []
 }
 
 export default class Main extends Component {
-    state = { ...initialState }
-    state2 = { ...initialStateAnimalPerdido }
+    state = { ...initialState, ...initialStateAnimalPerdido }
 
     componentDidMount() {
         axios("https://localhost:7042/api/cidade")
@@ -33,7 +32,8 @@ export default class Main extends Component {
                         animais.push({ ...animal, cidade })
                     })
 
-                    this.setState({ lista: animais.slice(19, 24) })
+                    this.setState({ lista: animais.slice(0, 5) })
+                    console.log(animais)
                 })
 
                 axios(urlAPI + 'perdido').then(resp => {
@@ -46,9 +46,7 @@ export default class Main extends Component {
 
                     })
 
-                    this.setState({ lista: animaisPerdidos.slice(0, 5) })
-
-                    console.log(animaisPerdidos)
+                    this.setState({ listaAnimaisPerdidos: animaisPerdidos.slice(0, 8) })
                 })
             })
     }
@@ -101,10 +99,10 @@ export default class Main extends Component {
 
                                 <div className='grid'>
 
-                                    {this.state.lista.map((animalPerdido) =>
-                                        <div className="cartao">
+                                    {this.state.listaAnimaisPerdidos.map((animalPerdido) =>
+                                        <div className="cartao2">
                                             <img src={animalPerdido.imagem} alt="imagem do animal" className="imgAnimal"></img>
-                                            <div id="container">
+                                            <div id="container2">
                                                 <a href={`/animalperdido/${animalPerdido.idAnimal}`}>
                                                     {animalPerdido.nome}
                                                 </a>
@@ -116,7 +114,10 @@ export default class Main extends Component {
                                         </div>
                                     )}
                                 </div>
+                                
+                                <a href="/achar"id="kkk" className="botoes">Veja mais!</a>
                             </div>
+                            
                         </div>
                         <h2>Por que adotar?</h2>
                         <div className="cardsPQ">
