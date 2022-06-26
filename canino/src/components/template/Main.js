@@ -103,7 +103,7 @@ export default class Main extends Component {
                                         <div className="cartao2">
                                             <img src={animalPerdido.imagem} alt="imagem do animal" className="imgAnimal"></img>
                                             <div id="container2">
-                                                <a href={`/animalperdido/${animalPerdido.idAnimal}`}>
+                                                <a href={`/animalperdido/${animalPerdido.idAnimalPerdido}`}>
                                                     {animalPerdido.nome}
                                                 </a>
 

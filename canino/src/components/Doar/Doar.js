@@ -89,7 +89,7 @@ export default function Doar(props) {
             <input type="text" maxLength="20" name="cor" value={novaDoacao.cor} onChange={atulizarNovaDoacao} className="input-pequeno" />
 
             <label>Idade:</label>
-            <input type="number" min="0" max="99" name="idade" value={novaDoacao.idade} onChange={atulizarNovaDoacao} className="input-pequeno" />
+            <input type="number" min="0" max="16" name="idade" value={novaDoacao.idade} onChange={atulizarNovaDoacao} className="input-pequeno" />
 
             <label>Descrição:</label>
             <input type="text" maxLength="200" name="descricao" placeholder="Coloque a descrição do seu bichinho" value={novaDoacao.descricao} onChange={atulizarNovaDoacao} className="input-grande" />

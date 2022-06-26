@@ -36,6 +36,14 @@ export default class Adotar extends Component {
     carregar(animal) {
         this.setState({ animal });
     }
+    atualizarPorte(event){
+        const { name, value } = event.target
+        this.setState({
+            ...initialState,
+            [name]: value
+        })
+        console.log(initialState)
+    }
     render() {
         return (
             <div className="content">
@@ -43,7 +51,7 @@ export default class Adotar extends Component {
                     <div>
 
                         <h2>Aqui estão todos os nossos aumigos!</h2>
-                        <select name="idPorte"  className="input-pequeno">
+                        <select name="idPorte"  className="input-pequeno" onChange={this.atualizarPorte}>
                             <option value="1">Grande</option>
                             <option value="2">Médio</option>
                             <option value="3">Pequeno</option>
