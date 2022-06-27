@@ -103,9 +103,9 @@ export default function Postar(props) {
                     <option value="17">Santo Antônio de Posse</option>
                     <option value="18">Sumaré</option>
             </select>
-            <label>Complemeto:</label>
+            <label>Complemento:</label>
             
-            <input type="text" maxLength="400" name="complemento" placeholder="Ex:onde viu seu animal pela última vez" value={novoProcurado.complemento} onChange={atulizarnovoProcurado} className="input-grande" />
+            <input type="text" maxLength="400" name="complemeto" placeholder="Ex:onde viu seu animal pela última vez" value={novoProcurado.complemeto} onChange={atulizarnovoProcurado} className="input-grande" />
             
             <input type="file" name="imagem" className="input-imagem" accept="image/*" onChange={adicionarImagem} hidden ></input>
 
