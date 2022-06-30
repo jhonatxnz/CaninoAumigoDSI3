@@ -9,7 +9,7 @@ import axios from 'axios';
 const urlAPI = "https://localhost:7042/api/animalPerdido";
 
 //inicializa o estado todos valores começam "vazios" 
-//variavel com dados do animalPerdido, e variavel lista onde está o data
+//variavel com dados do animalPerdido, e variavel lista onde estará o data
 const initialState = {
     animalPerdido: { nome: '', telefone: '', email: '', complemeto: '', imagem: '', idCidade: 0 },
     lista: []
@@ -26,7 +26,7 @@ export default class Adotar extends Component {
         //quando der certo fará isso
             .then(resp => { //arrow function com a resposta 
                 const cidades = resp.data //cidades recebe os dados que foram buscados naquele endereço
-            //axios busca no endereço passado como parâmetro os dados, no caso agora a gente vai buscar os animais perdidos da nossa tabela
+                //axios busca no endereço passado como parâmetro os dados, no caso agora a gente vai buscar os animais perdidos da nossa tabela
                 axios(urlAPI).then(resp => {
                     //vetor animaisPerdidos 
                     const animaisPerdidos = []

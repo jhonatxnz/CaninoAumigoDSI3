@@ -1,7 +1,8 @@
+//importa o css
 import './Sobre.css';
 
 export default function Sobre(props) {
-
+ //retorna JSX
   return (
     <div className="content">
             <main className="mainSobre">

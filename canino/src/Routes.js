@@ -24,9 +24,9 @@ export default function Rotas() {
             <Route path='/sobre' element={<Sobre />} />
             <Route path='/entrar' element={<Entrar />} />
             <Route path='/cadastrar' element={<Cadastrar />} />
-            <Route path='/conta/:idConta' element={<Conta />} />
-            <Route path='/animal/:idAnimal' element={<Animal />} />
-            <Route path='/animalPerdido/:idAnimalPerdido' element={<AnimalPerdido />} />
+            <Route path='/conta/:idConta' element={<Conta />} />    {/* use params */}
+            <Route path='/animal/:idAnimal' element={<Animal />} /> {/* use params */}
+            <Route path='/animalPerdido/:idAnimalPerdido' element={<AnimalPerdido />} />    {/* use params */}
 
             <Route path="*" to='/' />
         </Routes>

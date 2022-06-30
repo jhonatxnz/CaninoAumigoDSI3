@@ -57,31 +57,6 @@ div.content {
 .direita p{
     font-size: larger;
 }
-.nomeEbotao{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.btnEditar {
-    width: 20%;
-    margin-top: 10px;
-    padding: 12px 20px;
-
-    border: none;
-    border-radius: 4px;
-
-    cursor: pointer;
-    background-color: #f71e1e;
-    color: #ffffff;
-
-}
-.btnEditar:hover{
-    background-color: #f19090;
-    transition: 0.25s ease-in-out;
-}
-
-
 .btnAdotar {
     width: 100%;
     margin-top: 10px;

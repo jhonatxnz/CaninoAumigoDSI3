@@ -14,13 +14,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import Dialog from '@material-ui/core/Dialog';
-//JANELA POP UP
+//imports para poder mostrar uma JANELA POP UP
 
 //const que contem o endereco da tabela que queremos acessar
 const urlAPI = "https://localhost:7042/api/animal";
 
 //inicializa o estado, todos valores começam "vazios" 
-//variavel com dados do animaç, e variavel lista onde está o data
+//variavel com dados do animal, e variavel lista onde está o data
 const initialState = {
     animal: { nome: '', raca: '', cor: '', idade: 0, descricao: '', genero: '', vacinacao: '', idPorte: 0, idCidade: 0, imagem: '' },
     lista: []
@@ -79,7 +79,7 @@ export default function Animal(props) {
         const url = urlAPI + "/" + animal.idAnimal;
         //se usuário confirmar remoção
         if (window.confirm("Confirmar adoção do animal: " + animal.nome.toUpperCase())) {
-            //axios deletará no endereco com o id do animal
+            //axios requisita deleção no endereco com o id do animal
             axios['delete'](url, animal)
             //quando der certo fará isso      
             .then(resp => {
@@ -88,9 +88,11 @@ export default function Animal(props) {
                 //seta os dados , lista agora está atualizada
                 this.setState({ animal: initialState.animal, lista });
             })
+            //abre janela popUp
             setOpen(true);
         }
     }
+    //retorna JSX
     return (
         <div className="content">
             <main className="mainAnimal">
@@ -104,11 +106,7 @@ export default function Animal(props) {
                             <p></p>
                             {/* acessa o nome do animal */}
                             <h1>{animal.nome.toUpperCase()}</h1>
-                            <button className="btnEditar" onClick={() => adotar(animal)}>
-                                Adotar
-                            </button>
                         </div>
-
                         {/* pega campos do animal */}
                         <h2>Raça </h2>
                         <p>{animal.raca}</p>
