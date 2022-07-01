@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 //importamos axios para consumir a api
 import axios from 'axios';
 //importamos outra hoo, o useParams para conseguirmos acessar valores dos id
-import { useParams } from 'react-router-dom'
+import { useHref, useParams } from 'react-router-dom'
 //imports para poder mostrar uma JANELA POP UP
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -90,7 +90,10 @@ export default function Animal(props) {
             })
             //abre janela popUp
             setOpen(true);
+            
         }
+        window.location.href = 'http://localhost:3000/adotar';
+        
     }
     //retorna JSX
     return (
@@ -154,7 +157,6 @@ export default function Animal(props) {
                             você está assumindo uma grande responsabilidade!
                         </strong>     <br />
                         <p>Agora estamos retirando esse animal da página de adoção!</p>
-
 
                     </DialogContentText>
                 </DialogContent>

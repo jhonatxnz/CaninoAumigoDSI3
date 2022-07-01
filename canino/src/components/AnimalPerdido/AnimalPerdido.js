@@ -1,7 +1,7 @@
 //importa o css
 import './AnimalPerdido.css';
 //por função não necessita de Component 
-import React, { Component } from 'react';
+import React from 'react';
 //usa-se useEffect no lugar
 import { useState, useEffect } from 'react';
 //importamos axios para consumir a api
@@ -9,7 +9,6 @@ import axios from 'axios';
 //importamos outra hoo, o useParams para conseguirmos acessar valores dos id
 import { useParams } from 'react-router-dom'
 //imports para poder mostrar uma JANELA POP UP
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContentText from '@material-ui/core/DialogContentText';
@@ -63,7 +62,7 @@ export default function AnimalPerdido(props) {
             })
     }, [])//???
     //função que irá remover o animal da página [delete]
-    function adotar(animalPerdido) {
+    function achar(animalPerdido) {
         //const url recebe o endereco + o idAnimalPerdido para sabermos qual o animal será removido pelo seu id
         const url = urlAPI + "/" + animalPerdido.idAnimalPerdido;
         //se usuário confirmar remoção
@@ -80,6 +79,7 @@ export default function AnimalPerdido(props) {
             //abre janela popUp
             setOpen(true);
         }
+        window.location.href = 'http://localhost:3000/achar';
     }
     //retorna JSX
     return (
@@ -106,7 +106,7 @@ export default function AnimalPerdido(props) {
                         <h2>Cidade</h2>
                         <p>{cidade}</p>
                         {/* quando o botão for clicado função onclick será acionada e vai "achar o animal"*/}
-                        <button className="btnAdotar" onClick={() => adotar(animalPerdido)}>
+                        <button className="btnAdotar" onClick={() => achar(animalPerdido)}>
                             Viu esse animal?
                         </button>
                     </div>

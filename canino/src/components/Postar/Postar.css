@@ -32,7 +32,7 @@ div.content {
     display: flex;
     justify-content: center;
     align-self: center;
-
+    min-height: 660px;
 }
 /* se repete em outra page */
 .inclui-container {

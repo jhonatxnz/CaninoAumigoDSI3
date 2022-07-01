@@ -103,7 +103,7 @@ export default class Adotar extends Component {
                             {console.log("lista " + this.state.lista)}
                             {/* mapea todos os animais que estão armazenados na lista, cria um card para cada um */}
                             {this.state.lista.map((animal) =>
-                                <div className="cartao">
+                                <div className="cartao" key={animal.idAnimal}>
                                     {/* pega o campo imagem do animalPerdido e passa pro source da img */}
                                     <img src={animal.imagem} alt="imagem do animal" className="imgAnimal"></img>
                                     <div id="container">

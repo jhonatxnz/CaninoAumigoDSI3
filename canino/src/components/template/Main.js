@@ -98,7 +98,7 @@ export default class Main extends Component {
                         <div className="animalAlinhado">
                             {/* mapea todos os animais que estão armazenados na lista, cria um card para cada um */}
                             {this.state.lista.map((animal) =>
-                                <div className="cartao">
+                                <div className="cartao" key={animal.idAnimal}>
                                     {/* pega o campo imagem do animal e passa pro source da img */}
                                     <img src={animal.imagem} alt="imagem do animal" className="imgAnimal"></img>
                                     <div id="container">
@@ -126,7 +126,7 @@ export default class Main extends Component {
                                 <div className='grid'>
                                     {/* mapea todos os animais perdidos que estão armazenados na lista, cria um card para cada um */}
                                     {this.state.listaAnimaisPerdidos.map((animalPerdido) =>
-                                        <div className="cartao2">
+                                        <div className="cartao2" key={animalPerdido.idAnimalPerdido}>
                                             {/* pega o campo imagem do animalPerdido e passa pro source da img */}
                                             <img src={animalPerdido.imagem} alt="imagem do animal" className="imgAnimal"></img>
                                             <div id="container2">
